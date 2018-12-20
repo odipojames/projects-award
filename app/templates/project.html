@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+  {% for proj in project %}
+  <div style="margin-left:5%;" class="column">
+    <div class="card"style="border:hidden;">
+      <img src="{{proj.homepage.url}}" alt="project homepage" class="card-img-top">
+      <div class="card-body">
+        <p>
+          <b>Title:</b> {{proj.title}}
+        </p>
+        <p>
+          <b>Description:</b> {{proj.description}}
+        </p>
+        <div class="row">
+        <div class="col-md-5 col-sm-5 col-lg-5"></div>
+        <div class="col-md-2 col-sm-2 col-lg-2">
+          <a href="/rate/{{proj.id}}" class="btn btn-md btn-info">Rate Project</a>
+        </div>
+        <div class="col-md-5 col-sm-5 col-lg-5"></div>
+      </div>
+      </div>
+    </div>
+    <h3 class="text-center">
+      <b>Rating and Reviews</b>
+    </h3>
+    {% for rate in proj.rates.all %}
+    <p>
+      <b>{{rate.rater}}</b>
+    </p>
+    <svg height="56" width="56">
+    <circle r="25" cy="28" cx="28" stroke="#41c4f4"  stroke-width="5"class="circle-progress" stroke-dasharray="270" fill = "none"></circle>
+    <text x="50%" y="50%" text-anchor="middle" stroke="black" stroke-width="1" dy=".3em">{{rate.usability}}</text>
+    </svg>usability
+
+    <svg height="56" width="56">
+    <circle r="25" cy="28" cx="28" stroke="#41e2f4"  stroke-width="5"class="circle-progress" stroke-dasharray="270" fill = "none"></circle>
+    <text x="50%" y="50%" text-anchor="middle" stroke="black" stroke-width="1" dy=".3em">{{rate.content}}</text>
+    </svg>content
+
+    <svg height="56" width="56">
+    <circle r="25" cy="28" cx="28" stroke="#41f1f4"  stroke-width="5"class="circle-progress" stroke-dasharray="270" fill = "none"></circle>
+    <text x="50%" y="50%" text-anchor="middle" stroke="black" stroke-width="1" dy=".3em">{{rate.design}}</text>
+    </svg>design
+
+    <svg height="56" width="56">
+    <circle r="25" cy="28" cx="28" stroke="#41f4a0"  stroke-width="5"class="circle-progress" stroke-dasharray="270" fill = "none"></circle>
+    <text x="50%" y="50%" text-anchor="middle" stroke="black" stroke-width="1" dy=".3em">{{rate.average}}</text>
+    </svg>average
+
+    <p>
+      <b>Review:</b> {{rate.review}}
+    </p>
+
+    {% endfor %}
+
+  </div>
+  {% endfor%}
+</div>
+{% endblock %}

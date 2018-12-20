@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  {% if profile %}
+  {% for prof in profile %}
+  <div class="row">
+    <div class="col-md-3 col-sm-3">
+      <img src="{{prof.profile_pic.url}}" alt="profile pic" class="responsive" style="height:100px;width:100px; border: 2px hidden; margin-top:10px;border-radius:50%;">
+
+    </div>
+    <div class="col-md-9 col-sm-9">
+      <div class="card container-fluid" style="border:hidden;">
+        <div class="card-body">
+          <p>{{prof.bio}}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  {% endfor %}
+  <div class="row">
+    <div class="col-md-5 col-sm-5 col-lg-5"></div>
+    <div class="col-md-2 col-sm-2 col-lg-2">
+      <a href="{% url 'new_project' %}"class="btn btn-md btn-info">Add Project</a>
+    </div>
+    <div class="col-md-5 col-sm-5 col-lg-5"></div>
+  </div>
+  <div class="row">
+    {% for proj in project%}
+    <div class="column-md-4" style="float:left; width:33.33%;margin:5px;">
+      <a href="#" class="card" style="height:450px;color:black;text-decoration:none;">
+        <img src="{{proj.homepage.url}}" alt="project">
+        <div class="card-body">
+          <p>
+            <b>Title:</b>{{proj.title}}
+          </p>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+    {% else %}
+    <div class="row">
+      <div class="col-md-5 col-sm-5 col-lg-5"></div>
+      <div class="col-md-2 col-sm-2 col-lg-2">
+        <a href="{% url 'new_profile' %}"class="btn btn-md btn-info">Add Profile</a>
+      </div>
+      <div class="col-md-5 col-sm-5 col-lg-5"></div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
