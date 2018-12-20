@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if content%}
+
+{% for con in content %}
+<div class="container">
+  <div class="card" style="border:hidden;">
+    <img class="responsive img-fluid" src="{{con.homepage.url}}" alt="homepage">
+    <div class="card-body">
+      <p>
+        <b>{{con.title}}</b>
+      </p>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% else %}
+<h1>
+  <b>No Items match your input</b>
+</h1>
+{% endif %}
+{% endblock %}
