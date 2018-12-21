@@ -7,7 +7,7 @@ from .forms import *
 from .serializer import *
 
 # Create your views here.
-@login_required(login_url='/accounts/login/')
+# @login_required(login_url='/accounts/login/')
 def home(request):
     '''
     function that returns the index page
