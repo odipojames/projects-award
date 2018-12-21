@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-sm navbar-light bg-light">
-  <a href="{% url 'home' %}" class="navbar-brand">Project-Awwards</a>
+<nav class="navbar navbar-expand-sm  " style="background-color:#000080;">
+  <a href="{% url 'home' %}" class="navbar-brand" style="margin-left:100px;">Project-Awards</a>
   <div class="col-md-6 col-sm-6">
     {% if user.is_authenticated %}
     <ul class="navbar-nav mr-auto d-flex justify-content-between">
@@ -21,7 +21,7 @@
         </li>
       </ul>
     </li>
-    <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="get">
+    <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="get" style="margin-right:-150px;">
     <input type="search" name="project" placeholder="Search" aria-label="Search" class="form-control container-fluid">
     <button type="submit" name="button" class="btn-info">Search</button>
   </form>
