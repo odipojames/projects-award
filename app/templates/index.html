@@ -5,13 +5,13 @@
 ;">
   <div class="row">
     {% for con in content %}
-    <div class="column-md-4" style="float:left; width:33.33%; margin:5px;">
+    <div class="column-md-4 column-sm-4" style="float:left; width:33.33%; margin:5px;">
       <div class="card" style="height:450px; border:hidden;">
         <div class="card-header">
-          <h3 class="text-center"><b><i>{{con.title}}</i></b></h3>
+          <h3 class="text-center" style="color:#138496"><b><i>{{con.title}}</i></b></h3>
         </div>
         <a href="/project/{{con.title}}">
-          <img src="{{con.homepage.url}}" alt="homepage pic" class="card-img-top">
+          <img src="{{con.homepage.url}}" alt="homepage pic" class="card-img-top" id="proj_image" data-toggle="tooltip" data-placement="right" title="click here to review/rate">
         </a>
         <div class="card-body">
           <p><b>Description:</b> {{con.description}}</p>

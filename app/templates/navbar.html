@@ -1,10 +1,10 @@
 <nav class="navbar navbar-expand-sm  " style="background-color:#000080;">
-  <a href="{%url 'new_project'%}" class="navbar-brand" style="margin-left:100px;">Project-Awards</a>
+  <a href="{%url 'new_project'%}" class="navbar-brand" style="margin-left:100px;">Post project</a>
   <div class="col-md-6 col-sm-6">
     {% if user.is_authenticated %}
     <ul class="navbar-nav mr-auto d-flex justify-content-between">
       <li class="nav-item">
-        <a href="{ %url 'new_project'%}" class="nav-link">Post Project</a>
+        <a href="{% url 'home'%}" class="nav-link">Project-awards</a>
       </li>
       <li class="nav-item">
         <a href="/profile/{{user.username}}" class="nav-link">{{user.username}}</a>
@@ -32,7 +32,7 @@
   </li> -->
   <ul class="navbar-nav mr-auto d-flex justify-content-between">
     <li class="nav-item">
-      <a href="{% url 'home'%}" class="nav-link">Home</a>
+      <a href="{% url 'home'%}" class="nav-link">Project-awards</a>
     </li>
     <li class="nav-item">
       <a href="/profile/{{user.username}}" class="nav-link">{{user.username}}</a>
