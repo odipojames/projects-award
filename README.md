@@ -29,7 +29,7 @@ To run the application on your local server run:
 * $ python3.6 manage.py runserver
 
 Live link
-you can otherwise view the site by running the following url on your web browser : https://james-instagram.herokuapp.com/
+you can otherwise view the site by running the following url on your web browser : https://awards-project.herokuapp.com/
 
 **Technologies Used**
 
